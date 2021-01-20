@@ -20,16 +20,31 @@ SO THAT I can gauge my progress compared to my peers
 
 ```
 GIVEN I am taking a code quiz
+
 WHEN I click the start button
 THEN a timer starts and I am presented with a question
+    When i click start game button, my html displays the first question with answer options, and the clock on the timer starts to run down.
+
 WHEN I answer a question
 THEN I am presented with another question
+    When I click an answer choice, I am prompted with feedback that i answered the question correctly or not. Then I am presented another question.
+
+
 WHEN I answer a question incorrectly
 THEN time is subtracted from the clock
+    When I give a wrong answer, the timer decreases by 10 seconds.
+
+
 WHEN all questions are answered or the timer reaches 0
 THEN the game is over
+    When i answer all the questions OR the time runs out, the game ends and I am taken to the score screen.
+
+
 WHEN the game is over
 THEN I can save my initials and my score
+    When I am on the score screen, I can enter my initials and save my score, then I am taken to the highscore html page.
+
+
 ```
 
 ## Mock-Up
