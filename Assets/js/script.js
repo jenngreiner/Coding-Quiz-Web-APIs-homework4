@@ -4,12 +4,12 @@
 var startButton = document.getElementById("start-button")
 var clearScoresButton = document.getElementById("clear-scores")
 var returnButton = document.getElementById("return")
-var saveButtom = document.getElementById("save")
+var saveButton = document.getElementById("save")
 var timeEl = document.getElementById("time");
 var questionEl = document.getElementById("question");
 var optionEl = document.querySelector(".options");
 var listItem = document.querySelector("li");
-var playerInitials = document.querySelector("#initials")
+var playerInitials = document.getElementById("initials")
 var secondsLeft = 10;
 
 // main index
@@ -52,11 +52,13 @@ function endGame() {
     // display final score
     document.getElementById("final-score").append(secondsLeft);
 
-    // store playerInitials and highScore open highscores.html on submit click
-    saveButton.addEventListener("click", function () {
-
-    })
+    // save score when submit button clicked
+    saveButton.addEventListener("click", saveScore)
 };
+
+
+
+
 // When i click Start Game button, my html displays the first question with answer options, and the clock on the timer starts to run down.
 startButton.addEventListener("click", function startGame() {
     // start timer
@@ -91,9 +93,12 @@ if (secondsLeft === 0) {
 // Save scores
 function saveScore() {
     var playerScore = {
-        initials: playerInitials,
+        initials: playerInitials.value,
         score: secondsLeft,
     }
+    // Use .setItem() to store object in storage and JSON.stringify to convert it as a string
+    localStorage.setItem("playerScore", JSON.stringify(playerScore));
+    console.log(playerScore);
 }
 
 // Highscores live in separate HTML page; displays list of saved scores
