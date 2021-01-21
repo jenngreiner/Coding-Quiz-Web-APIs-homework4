@@ -9,40 +9,38 @@
 </head>
 
 <body>
+    <!-- link to highscores -->
     <div class="scores">
         <a href="./highscores.html">View highscores</a>
     </div>
-
-    <div class="time">
+    <!-- timer -->
+    <div class="timer">
+        Time remaining: <span id="time">0</span>
     </div>
-
+    <!-- start screen -->
     <div class="container">
-        <h1>Coding Quiz Challenge</h1>
-        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
-            will penalize your score by ten seconds!</p>
-        <button id="start-button">Start Game</button>
-    </div>
-
-    <div id="question" class="">
-        <div>
-            Question 1
-            <ol>
-                <li><button class="option">answer 1</button>
-                </li><br>
-                <li><button class="option">answer 2</button>
-                </li><br>
-                <li><button class="option">answer 3</button>
-                </li><br>
-
-            </ol>
+        <div id="start-screen" class="start">
+            <h1>Coding Quiz Challenge</h1>
+            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
+                answers
+                will penalize your score by ten seconds!</p>
+            <button id="start-button">Start Game</button>
         </div>
-    </div>
+        <!-- questions -->
+        <div id="question-block" class="hide">
+            <h2 id="question-title"></h2>
+            <div id="choices" class="choices"></div>
+        </div>
+        <!-- end game screen -->
+        <div id="end-screen" class="hide">
+            <h2>All done!</h2>
+            <p>Your final score is <span id="final-score"></span>.</p>
+            Enter initials: <br><input type="text" placeholder="Enter your initials.." id="initials">
+            <br><button type="submit" id="save">Save score</button>
+        </div>
 
-
-    </div>
-
-    <div class="end-game">
-        <input type="text" placeholder="Enter your initials.." id="initials">
+        <!-- answer feedback -->
+        <div id="feedback" class="feedback hide"></div>
     </div>
 
     <script src="./Assets/js/script.js"></script>

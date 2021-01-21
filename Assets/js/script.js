@@ -1,26 +1,31 @@
 //Javascript quiz
 
 //define variables
-var startButton = document.querySelector("#start-button")
-var clearScoresButton = document.querySelector("#clear-scores")
-var returnButton = document.querySelector("#return")
-var timeEl = document.querySelector(".time");
-var questionEl = document.querySelector("#question");
+var startButton = document.getElementById("start-button")
+var clearScoresButton = document.getElementById("clear-scores")
+var returnButton = document.getElementById("return")
+var saveButtom = document.getElementById("save")
+var timeEl = document.getElementById("time");
+var questionEl = document.getElementById("question");
 var optionEl = document.querySelector(".options");
 var listItem = document.querySelector("li");
 var playerInitials = document.querySelector("#initials")
-var secondsLeft = 30;
+var secondsLeft = 10;
 
 // main index
 // When my browser opens, I see View highscores button top left, Timer top right, and Coding Quiz Challenge, overview, and start game button on page. Questions are hidden
 
+// hide all elements with class = hide on start screen
+// [].forEach.call(document.querySelectorAll('.hide'), function (el) {
+//     el.style.visibility = 'hidden';
+// });
 
 // timer
 function setTime() {
     // Sets interval in variable
     var timerInterval = setInterval(function () {
         secondsLeft--;
-        timeEl.textContent = "Time Remaining: " + secondsLeft;
+        timeEl.textContent = secondsLeft;
 
         if (secondsLeft === 0) {
             // Stops execution of action at set interval
@@ -31,24 +36,38 @@ function setTime() {
     }, 1000);
 };
 
+// setTimeout(() => {
+//     const highScore = document.getElementById("high-score");
+//     highScore.textContent = "secondsLeft";
+//     const qBlock = document.getElementById("question-block");
+//     qBlock.innerHTML = "Question 1<br />Answer 1<br />Answer 2<br />Answer 3"
+// }, 3000);
+
 // Function to end game and open score screen
 function endGame() {
     timeEl.textContent = " ";
-    // display scores
+    // display end screen
+    // document.getElementById('feedback').style.visibility = 'visible';
 
-    // input initials
+    // display final score
+    document.getElementById("final-score").append(secondsLeft);
 
+    // store playerInitials and highScore open highscores.html on submit click
+    saveButton.addEventListener("click", function () {
+
+    })
 };
 // When i click Start Game button, my html displays the first question with answer options, and the clock on the timer starts to run down.
-startButton.addEventListener("click", function () {
+startButton.addEventListener("click", function startGame() {
     // start timer
     setTime();
     // display first question
-    displayQuestion();
+    // displayQuestion();
 });
 
 function displayQuestion() {
-    questionEl.innerHTML = "Question 1<br />One<br />Two" // how do you show something?
+    const qBlock = document.getElementById("question-block");
+    qBlock.innerHTML = "Question 1<br />Answer 1<br />Answer 2<br />Answer 3"
 };
 
 
@@ -60,7 +79,7 @@ function displayQuestion() {
 // if correct != true {timer i-10}
 
 // When i answer all the questions OR the time runs out, the game ends and I am taken to the score screen.
-if (secondsLeft === 0 || questionsLeft === 0) {
+if (secondsLeft === 0) {
     endGame();
 };
 

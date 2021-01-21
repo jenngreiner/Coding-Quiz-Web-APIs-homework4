@@ -4,3 +4,20 @@ body{
 .container {
     text-align: center;
 }
+
+.scores {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 10px;
+}
+.timer {
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 10px;
+}
+
+#start-screen {
+    background-color: lavender;
+}
