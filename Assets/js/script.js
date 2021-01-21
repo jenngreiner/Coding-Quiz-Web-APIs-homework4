@@ -5,7 +5,7 @@ var startButton = document.querySelector("#start-button")
 var clearScoresButton = document.querySelector("#clear-scores")
 var returnButton = document.querySelector("#return")
 var timeEl = document.querySelector(".time");
-var questionEl = document.querySelector(".question");
+var questionEl = document.querySelector("#question");
 var optionEl = document.querySelector(".options");
 var listItem = document.querySelector("li");
 var playerInitials = document.querySelector("#initials")
@@ -48,7 +48,7 @@ startButton.addEventListener("click", function () {
 });
 
 function displayQuestion() {
-    questionEl. // how do you show something?
+    questionEl.innerHTML = "Question 1<br />One<br />Two" // how do you show something?
 };
 
 
