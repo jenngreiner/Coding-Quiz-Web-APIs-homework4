@@ -10,7 +10,42 @@ var questionEl = document.getElementById("question");
 var optionEl = document.querySelector(".options");
 var listItem = document.querySelector("li");
 var playerInitials = document.getElementById("initials");
-var secondsLeft = 10;
+var secondsLeft = 4;
+
+// question variables
+var question = [
+    {
+        title: "What type of data returns a true or false?",
+        choices: ["string", "boolean", "number", "character"],
+        answer: "boolean",
+    },
+    {
+        title: "What language would you use to style a project?",
+        choices: ["HTML", "JavaScript", "CSS", "jQuery"],
+        answer: "CSS",
+    },
+    {
+        title: "What do you call a variable that is defined within a function?",
+        choices: ["Global Variable", "National Variable", "Local Variable", "Regular Variable",],
+        answer: "Local Variable",
+    },
+    {
+        title: "Select the correct way to write a variable in JavaScript",
+        choices: ["my-variable", "MyVariable", "myVariable", "my variable",],
+        answer: "myVariable",
+    },
+    {
+        title: "Which symbol means 'equal in value and type'?",
+        choices: ["=", "!=", "==", "===",],
+        answer: "===",
+    },
+    {
+        title: "Which of the following allows user's to enter text via a pop-up?",
+        choices: ["alert", "confirm", "input", "prompt",],
+        answer: "prompt",
+    },
+
+]
 
 // main index
 // When my browser opens, I see View highscores button top left, Timer top right, and Coding Quiz Challenge, overview, and start game button on page. Questions are hidden
@@ -44,6 +79,8 @@ function setTime() {
 // }, 3000);
 
 // Function to end game and open score screen
+
+// function to display final score and get player initials once all questions are answered or secondsLeft is 0
 function endGame() {
     timeEl.textContent = " ";
 
@@ -61,9 +98,8 @@ function endGame() {
     // When I click Save, my intials and score are stored 
     saveButton.addEventListener("click", saveScore)
     // When I click Save, Highscores.html opens
-    // saveButton.addEventListener("click", )
+    saveButton.addEventListener("click", renderHighscores)
 };
-
 
 // When i click Start Game button, my html displays the first question with answer options, and the clock on the timer starts to run down.
 startButton.addEventListener("click", function startGame() {
@@ -81,6 +117,12 @@ function displayQuestion() {
     document.getElementById('question-block').style.visibility = 'visible';
     const qBlock = document.getElementById("question-block");
     qBlock.innerHTML = "Question 1<br />Answer 1<br />Answer 2<br />Answer 3"
+    // how do you insert questions here?
+    // <div id="question-block" class="hide">
+    //         <h2 id="question-title"></h2>
+    //         <div id="choices" class="choices"></div>
+    //     </div>
+
     // if secondsLeft=0, endGame
     if (secondsLeft === 0) {
         endGame();
@@ -98,22 +140,35 @@ if (secondsLeft === 0) {
     endGame();
 };
 
-// final score displayed after all questions are answered
-
 // Save scores
+var playerScore = "";
+
 function saveScore() {
     var playerScore = {
         // enter initials in text field to save score
         initials: playerInitials.value,
         // final score is the number of seconds remaining on the timer
         score: secondsLeft,
-    }
+    };
     // Use .setItem() to store object in storage and JSON.stringify to convert it as a string
     localStorage.setItem("playerScore", JSON.stringify(playerScore));
     console.log(playerScore);
+    console.log(playerScore.score)
 }
 
 // Highscores live in separate HTML page; displays list of saved scores
+function renderHighscores() {
+    // Use JSON.parse() to convert text to JavaScript object
+    var highScore = JSON.parse(localStorage.getItem("playerScore"));
+    console.log(highScore);
+    // Check if data is returned, if not exit out of the function
+    if (highScore != null) {
+        document.getElementById("score-item").innerHTML = highScore.initials;
+    } else {
+        console.log("null");
+        return;
+    }
+};
     // Scores are stored even if you refresh your browser
     // When I click go back, index.html opens
     // When I click Clear Highscores, all score data is erased
