@@ -1,4 +1,28 @@
-# 04 Web APIs: Code Quiz
+# Web APIs: Code Quiz
+
+### Table of Contents:
+* [User Story](#user-story)
+* [Description](#description)
+
+[Code Quiz]()
+
+
+## User Story
+As a full-stach we developer, I want to be able to creat a quiz using multiple choice questions and a timer. I also want to be able to store the highscores from the quiz in a single list that player can refer to while playing the game. 
+
+## Description 
+This project is my current working portfolio. To achieve a responsive, mobile-first design that allows users to view the web application on any device, mobile or desktop, I used BootStrap CSS grid formatting. This allows the navibar, images, and page contents to visually change depending on the width of the browser window. 
+
+## Usage
+Open the [Code Quiz](https://jenngreiner.github.io/javascript-password-generator-homework3/) in your browser. Click start to begin the quiz. Click on an option for each question, text will appear at the bottom telling you if your answer was right, or if not, what the correct answer is. Each wrong answer deducts 5 second off of the time remaining. Once all of the questions are answered, or the timer runs out, the game ends. The user can enter their initials and save their higscore. Onve the user clicks "Save score", they are taken to the current highscore list. The user can click "Go back" to retake the quiz, or "Clear highscores" to reset the highscores list. 
+
+## Mock-Up
+
+The following image shows the web application's appearance and functionality:
+
+![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
+
+- - -
 
 ## Your Task
 

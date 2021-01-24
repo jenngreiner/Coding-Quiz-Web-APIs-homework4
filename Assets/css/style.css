@@ -17,10 +17,9 @@ body{
 .container {
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
     position: absolute;
     left: 30%;
-    top: 20%;
+    top: 10%;
     width: 500px;
     height: 300px;
     border: 2px solid #2e5d52;
@@ -43,4 +42,11 @@ button {
     font-size: 20px;
     border: 3px solid #889a88;
     border-radius: 8px;
+}
+
+li {
+    background-color: #91b59e;
+    padding: 5px;
+    margin: 5px;
+    color: white;
 }
