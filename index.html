@@ -14,29 +14,28 @@
         <a href="./highscores.html">View highscores</a>
     </div>
     <!-- timer -->
-    <div class="timer header">
-        Time remaining: <span id="time">0</span>
+    <div class="header" id="time">
     </div>
     <!-- start screen -->
     <div class="container">
-        <div id="start-screen" class="start">
+        <div id="question-block">
             <h1>Coding Quiz Challenge</h1>
             <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
                 answers
                 will penalize your score by ten seconds!</p>
+            <ul id="choices"></ul>
+            <!-- start button -->
             <button id="start-button">Start Game</button>
         </div>
-        <!-- questions -->
-        <div id="question-block" class="hide">
-            <h2 id="question-title"></h2>
-            <div id="choices" class="choices"></div>
-        </div>
+
         <!-- end game screen -->
         <div id="end-screen" class="hide">
             <h2>All done!</h2>
             <p>Your final score is <span id="final-score"></span>.</p>
             Enter initials: <br><input type="text" placeholder="Enter your initials.." id="initials">
-            <br><button type="submit" id="save">Save score</button>
+            <br>
+            <!-- buttons -->
+            <button type="submit" id="save">Save score</button>
         </div>
 
         <!-- answer feedback -->

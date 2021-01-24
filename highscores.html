@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Highscores</title>
     <link rel="stylesheet" href="./Assets/css/style.css">
-
+    <script src="./Assets/js/script.js"></script>
+    <script src="./Assets/js/highscores.js"></script>
 </head>
 
-<body>
+<body onload="renderHighscores()">
     <div class="quiz">
         <a href="./index.html">Go back</a>
     </div>
@@ -19,16 +20,11 @@
             Highscores
         </h1>
         <!-- display highscores as list items -->
-        <div class="scores-list">
-            <ol>
-                <li><span id="score-item"></span></li>
-            </ol>
+        <div class="scores-list" id="score-item">
         </div>
-        <button id="return">Go back</button>
+        <button id="go-back">Go back</button>
         <button id="clear-scores">Clear Highscores</button>
     </div>
-
-    <script src="./Assets/js/script.js"></script>
 
 
 </body>
