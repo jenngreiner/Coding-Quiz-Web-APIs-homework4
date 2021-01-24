@@ -137,7 +137,7 @@ function compare(event) {
             createDiv.innerHTML = "Correct!"
         } else {
             // wrong answer; will deduct 5 seconds from score
-            secondsLeft = secondsLeft - 5
+            secondsLeft = secondsLeft - 10
             createDiv.innerHTML = "Wrong! The correct answer is: " + question[questionIndex].answer;
         }
     }
