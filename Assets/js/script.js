@@ -3,6 +3,8 @@
 //define variables
 var startButton = document.getElementById("start-button");
 var saveButton = document.getElementById("save");
+var clearScoresButton = document.getElementById("clear-scores");
+var returnButton = document.getElementById("go-back");
 var timeEl = document.getElementById("time");
 var questionEl = document.getElementById("question");
 var optionEl = document.querySelector(".options");
@@ -63,7 +65,7 @@ function setTime() {
             endGame();
         }
     }, 1000);
-    render
+
 };
 
 // function to display final score and get player initials once all questions are answered or secondsLeft is 0
@@ -91,7 +93,6 @@ if (startButton) {
         render(questionIndex);
     });
 }
-
 
 function render(questionIndex) {
     // creates new ul element
@@ -144,7 +145,7 @@ function compare(event) {
     questionIndex++;
     // When i answer all the questions OR the time runs out, the game ends and I am taken to the score screen.
 
-    if (questionIndex >= question.length || secondsLeft === 0) {
+    if (questionIndex >= question.length) {
         // end game after last question
         endGame();
     } else {
@@ -192,11 +193,18 @@ function renderHighscores() {
         scoreList += x + " : " + playerScores[x] + "<br>"
     }
     document.getElementById("score-item").innerHTML = scoreList
+
+    if (clearScoresButton) {
+        clearScoresButton.addEventListener("click", function () {
+            localStorage.clear();
+            location.reload
+        })
+    }
+    if (returnButton) {
+        // When I click Go Back, index.html opens
+        returnButton.addEventListener("click", function goBack() {
+            // open index.html
+            location.href = "index.html"
+        })
+    }
 };
-
-
-// When I click Go Back, index.html opens
-function goBack() {
-    // open index.html
-    window.location.replace("index.html");
-}
