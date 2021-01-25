@@ -33,6 +33,11 @@ The following image shows the code quiz's appearance and functionality:
 
 ### The user can view all previous highscores
 ![The user can view all previous highscores](./Assets/images/04_Code-Quiz.png)
+
+## Credits
+* https://www.w3schools.com/
+* https://www.color-hex.com/
+* https://developer.mozilla.org/
 - - -
 
 

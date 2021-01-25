@@ -200,11 +200,5 @@ function renderHighscores() {
             location.reload
         })
     }
-    if (returnButton) {
-        // When I click Go Back, index.html opens
-        returnButton.addEventListener("click", function goBack() {
-            // open index.html
-            location.href = "index.html"
-        })
-    }
+
 };
